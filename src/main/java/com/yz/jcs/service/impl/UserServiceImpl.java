@@ -15,6 +15,10 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> users() {
+		User user = new User();
+		user.setId(111);
+		user.setName("22");
+		userDao.addUser(user);
 		return userDao.findUsers();
 	}
 
@@ -26,6 +30,15 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int delUser(User user) {
 		return userDao.delUser(user);
+	}
+
+	@Override
+	public void print() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

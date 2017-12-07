@@ -1,6 +1,9 @@
 package com.yz.jcs.filter;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -11,7 +14,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yz.jcs.util.JsonUtil;
 import com.yz.jcs.util.LoggerUtil;
+import com.yz.jcs.util.ThreadLocalUtil;
 
 public class AuthFilter implements Filter {
 
@@ -29,8 +34,13 @@ public class AuthFilter implements Filter {
 		String url = request.getServletPath();
 		LoggerUtil.info(getClass(), "doFilter", url);
 		try {
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("requestId", UUID.randomUUID()+"");
+			ThreadLocalUtil.set(map);
 			chain.doFilter(request, response);
+			System.out.println(JsonUtil.toJson(ThreadLocalUtil.get()));
 		} finally {
+			ThreadLocalUtil.clear();
 			LoggerUtil.endLog();
 		}
 	}
