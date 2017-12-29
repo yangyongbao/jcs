@@ -8,8 +8,6 @@ public interface UserService {
 	
 	List<User> users();
 	
-	void print();
-	
 	int addUser(User user);
 	
 	int delUser(User user);

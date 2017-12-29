@@ -7,9 +7,7 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
 	default-autowire="byName">
 	
-	<import resource="classpath:bean/dao-bean.xml" />
-	<import resource="classpath:bean/service-bean.xml" />
-	<import resource="classpath:bean/service-framework-bean.xml" />
-
-
+	<bean id="userService" class="com.yz.jcs.service.impl.UserServiceImpl"></bean>
+	<bean id="roleService" class="com.yz.jcs.service.impl.RoleServiceImpl"></bean>
+	
 </beans>

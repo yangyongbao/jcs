@@ -11,11 +11,21 @@ public class UserDaoImpl extends  SqlSessionDaoSupport implements UserDao {
 
 	@Override
 	public List<User> findUsers() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return getSqlSession().selectList("findUsers");
 	}
 
 	@Override
 	public int addUser(User user) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return getSqlSession().insert("addUser",user);
 	}
 

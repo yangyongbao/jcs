@@ -35,7 +35,7 @@ public class AuthFilter implements Filter {
 		LoggerUtil.info(getClass(), "doFilter", url);
 		try {
 			Map<String, String> map = new HashMap<String, String>();
-			map.put("requestId", UUID.randomUUID()+"");
+			//map.put("requestId", UUID.randomUUID()+"");
 			ThreadLocalUtil.set(map);
 			chain.doFilter(request, response);
 			System.out.println(JsonUtil.toJson(ThreadLocalUtil.get()));
