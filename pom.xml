@@ -7,6 +7,48 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jcs Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+
+	<profiles>
+		<!-- production -->
+		<profile>
+			<id>production</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>env</name>
+					<value>prod</value>
+				</property>
+			</activation>
+			<properties>
+				<profile.file.name>/profile/env.properties.prod</profile.file.name>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+		</profile>
+		
+		<!-- development -->
+		<profile>
+			<id>development</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>dev</value>
+				</property>
+			</activation>
+			<properties>
+				<profile.file.name>/profile/env.properties.dev</profile.file.name>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+		</profile>
+		
+	</profiles>
+	
+	
+	
+		
+
+
+
 	<dependencies>
 
 
@@ -16,7 +58,6 @@
 			<artifactId>spring-context</artifactId>
 			<version>5.0.2.RELEASE</version>
 		</dependency>
-
 
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->

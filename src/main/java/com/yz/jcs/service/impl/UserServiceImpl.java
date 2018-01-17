@@ -3,6 +3,7 @@ package com.yz.jcs.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.yz.jcs.dao.UserDao;
 import com.yz.jcs.model.User;
@@ -12,7 +13,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserDao userDao;
-	
+
+	@Value("#{configProperties['app']}")
+	private String app;
 
 	@Override
 	public List<User> users() {

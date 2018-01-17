@@ -19,5 +19,14 @@
 			</list>
 		</property>
 	</bean>
+	
+	
+	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:app.properties</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>
