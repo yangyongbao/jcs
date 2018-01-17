@@ -1,9 +1,5 @@
 package com.yz.jcs.util;
 
-/**
- * @author yanghaibo
- * @date 2017/1/20.
- */
 public final class Base64 {
     private static final int BASELENGTH = 128;
     private static final int LOOKUPLENGTH = 64;

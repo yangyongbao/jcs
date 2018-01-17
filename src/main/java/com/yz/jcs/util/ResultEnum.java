@@ -7,7 +7,6 @@ public enum ResultEnum {
     SUCCESS(1, "成功"),
     NO_ACCESS(301, "无此权限"),
     UNLOGIN(302, "未登录"),
-    UNFOLLOW(303, "请先关注云享付公众号"),
     PARAM_ERROR(400, "参数异常"),
     CENTER_ERROR(510, "中心异常"),
     SESSION_ERROR(710, "session异常"),

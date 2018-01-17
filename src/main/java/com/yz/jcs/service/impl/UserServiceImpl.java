@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.yz.jcs.dao.UserDao;
 import com.yz.jcs.model.User;
-import com.yz.jcs.service.RoleService;
 import com.yz.jcs.service.UserService;
 
 public class UserServiceImpl implements UserService {
@@ -14,8 +13,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
 	
-	@Autowired
-	private RoleService roleService;
 
 	@Override
 	public List<User> users() {
@@ -23,7 +20,6 @@ public class UserServiceImpl implements UserService {
 		user.setId(111);
 		user.setName("22");
 		userDao.addUser(user);
-		roleService.list();
 		return userDao.findUsers();
 	}
 

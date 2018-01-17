@@ -8,6 +8,5 @@
 	default-autowire="byName">
 	
 	<bean id="userService" class="com.yz.jcs.service.impl.UserServiceImpl"></bean>
-	<bean id="roleService" class="com.yz.jcs.service.impl.RoleServiceImpl"></bean>
 	
 </beans>
